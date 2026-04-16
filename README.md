@@ -1,116 +1,132 @@
-# AI Benchmark 知识库
+# AI Benchmark Knowledge Base
 
-> 全面收录各大 AI 公司用来测试模型性能的 Benchmark 题库完整集合
+> A comprehensive collection of benchmarks used by major AI companies to evaluate model performance
 
-## 概述
+**[中文版 (Chinese Version)](README.zh-CN.md)**
 
-本知识库系统性地整理了当前 AI 行业主流评测基准（Benchmark），涵盖 OpenAI、Anthropic、Google DeepMind、Meta、Mistral 等公司在其技术报告中使用的所有重要评测集。
+## Overview
 
-## 目录结构
+This knowledge base systematically catalogs mainstream AI evaluation benchmarks, covering all important benchmark suites used by OpenAI, Anthropic, Google DeepMind, Meta, Mistral, and others in their technical reports.
+
+## Directory Structure
 
 ```
 ai-benchmark-kb/
-├── README.md                    # 本文件 — 总览与导航
-├── 00-总览与导航/
-│   ├── benchmark-landscape.md   # Benchmark 全景图与分类体系
-│   ├── evaluation-frameworks.md # 评测框架与工具
-│   └── company-usage-matrix.md # 各公司使用的 Benchmark 对照表
-├── 01-综合知识理解/
+├── README.md                    # This file — overview & navigation
+├── 00-overview/
+│   ├── benchmark-landscape.md   # Benchmark landscape & classification
+│   ├── evaluation-frameworks.md # Evaluation frameworks & tools
+│   └── company-usage-matrix.md # Benchmark usage by company
+├── 01-general-knowledge/
 │   ├── MMLU.md                  # Massive Multitask Language Understanding
-│   ├── MMLU-Pro.md              # MMLU 专业级
-│   ├── BIG-bench.md             # Beyond the Imitation Game
-│   ├── ARC.md                   # AI2 Reasoning Challenge
-│   ├── HellaSwag.md             # 常识推理
-│   ├── C-Eval.md                # 中文综合评测
-│   └── MMMLU.md                 # 多语言 MMLU
-├── 02-推理能力/
-│   ├── GPQA.md                  # Graduate-Level Google-Proof Q&A
-│   ├── ARC-AGI.md               # 抽象推理语料库
-│   ├── HLE.md                   # Humanity's Last Exam
-│   ├── WinoGrande.md            # 共指消解推理
-│   ├── PIQA.md                  # 物理直觉问答
-│   └── SIQA.md                  # 社会交互问答
-├── 03-数学推理/
-│   ├── GSM8K.md                 # 小学数学 8K
-│   ├── MATH.md                  # 竞赛数学
-│   ├── Minerva-Math.md          # DeepMind 数学评测
-│   └── MATH-500.md              # MATH 精选 500 题
-├── 04-编程能力/
-│   ├── HumanEval.md             # OpenAI 164 道编程题
-│   ├── MBPP.md                  # Most Basic Python Problems
-│   ├── SWE-bench.md             # 真实 GitHub Issue 修复
-│   ├── LiveCodeBench.md         # 实时编程竞赛题
-│   └── BigCodeBench.md          # 大规模代码评测
-├── 05-长上下文/
-│   ├── MRCR.md                  # 多轮共指消解
-│   ├── AA-LCR.md                # 长上下文推理
-│   └── RULER.md                 # 长文本检索与推理
-├── 06-指令跟随/
-│   ├── IFEval.md                # Instruction Following Evaluation
-│   ├── MT-Bench.md              # 多轮对话评测
-│   └── AlpacaEval.md            # Alpaca 评测
-├── 07-真实性与事实性/
-│   ├── TruthfulQA.md            # 真实性问答
-│   ├── SimpleQA.md              # 简短事实性问答
-│   └── FACTS.md                 # Google DeepMind 事实性评测套件
-├── 08-安全与对齐/
+│   ├── MMLU-Pro.md             # MMLU Professional
+│   ├── BIG-bench.md            # Beyond the Imitation Game
+│   ├── ARC.md                  # AI2 Reasoning Challenge
+│   ├── HellaSwag.md            # Commonsense Reasoning
+│   ├── C-Eval.md               # Chinese Comprehensive Evaluation
+│   └── MMMLU.md                # Multilingual MMLU
+├── 02-reasoning/
+│   ├── GPQA.md                 # Graduate-Level Google-Proof Q&A
+│   ├── ARC-AGI.md              # Abstraction and Reasoning Corpus
+│   ├── ARC-AGI-2.md            # Abstraction and Reasoning Corpus v2 (2025)
+│   ├── HLE.md                  # Humanity's Last Exam
+│   ├── WinoGrande.md           # Coreference Resolution Reasoning
+│   ├── PIQA.md                 # Physical Intuition QA
+│   └── SIQA.md                 # Social Interaction QA
+├── 03-math-reasoning/
+│   ├── GSM8K.md                # Grade School Math 8K
+│   ├── MATH.md                 # Competition Mathematics
+│   ├── Minerva-Math.md         # DeepMind Math Evaluation
+│   └── MATH-500.md             # MATH Curated 500
+├── 04-coding/
+│   ├── HumanEval.md            # OpenAI 164 Programming Problems
+│   ├── MBPP.md                 # Most Basic Python Problems
+│   ├── SWE-bench.md            # Real GitHub Issue Fixing
+│   ├── SWE-bench-Verified.md   # SWE-bench Human-Verified Subset
+│   ├── SWE-bench-Pro.md        # SWE-bench Professional
+│   ├── LiveCodeBench.md        # Live Programming Competition
+│   ├── BigCodeBench.md         # Large-Scale Code Evaluation
+│   └── CodeForces.md           # Competitive Programming Evaluation
+├── 05-long-context/
+│   ├── MRCR.md                 # Multi-Round Coreference Resolution
+│   ├── AA-LCR.md               # Long Context Reasoning
+│   └── RULER.md                # Long Text Retrieval & Reasoning
+├── 06-instruction-following/
+│   ├── IFEval.md               # Instruction Following Evaluation
+│   ├── MT-Bench.md             # Multi-Turn Benchmark
+│   └── AlpacaEval.md           # Alpaca Evaluation
+├── 07-truthfulness/
+│   ├── TruthfulQA.md            # Truthfulness QA
+│   ├── SimpleQA.md             # Short-Answer Factual QA
+│   └── FACTS.md                # Google DeepMind Factuality Suite
+├── 08-safety-alignment/
 │   ├── Anthropic-HH.md          # Helpful & Harmless
-│   ├── RealToxicityPrompts.md   # 毒性提示评测
-│   ├── ToxiGen.md               # 隐性毒性检测
-│   └── WMDP.md                  # 大规模杀伤性武器防护
-├── 09-多模态理解/
-│   ├── MMMU.md                  # 多学科多模态理解
-│   ├── VQAv2.md                 # 视觉问答 v2
-│   └── MVBench.md               # 视频理解评测
-├── 10-对话与生成/
-│   ├── Chatbot-Arena.md         # 聊天机器人竞技场
-│   ├── WildBench.md             # 野外评测
-│   └── MixEval.md               # 混合评测
-├── 11-嵌入与检索/
-│   ├── MTEB.md                  # 大规模文本嵌入评测
-│   └── BEIR.md                  # 信息检索评测
-├── 12-智能体能力/
-│   ├── GAIA.md                  # 通用 AI 助手评测
-│   ├── RE-Bench.md              # 代理推理评测
-│   ├── BFCL.md                  # 伯克利函数调用评测
-│   └── Tau2.md                  # 多轮代理评测
-├── 13-专业领域/
-│   ├── HealthBench.md           # 医疗评测
-│   ├── DeepSearchQA.md          # 深度搜索问答
-│   └── Chess-Text.md            # 国际象棋推理
-└── 14-竞赛级数学/
-    ├── AIME.md                  # 美国数学邀请赛
-    └── FrontierMath.md          # 前沿数学评测
+│   ├── RealToxicityPrompts.md   # Toxicity Prompt Evaluation
+│   ├── ToxiGen.md               # Implicit Toxicity Detection
+│   └── WMDP.md                  # Weapons of Mass Destruction Prevention
+├── 09-multimodal/
+│   ├── MMMU.md                 # Multi-Discipline Multimodal Understanding
+│   ├── MMMU-Pro.md             # MMMU Professional
+│   ├── VQAv2.md                # Visual Question Answering v2
+│   └── MVBench.md              # Video Understanding Evaluation
+├── 10-dialogue-generation/
+│   ├── Chatbot-Arena.md         # Chatbot Arena
+│   ├── WildBench.md            # Wild Evaluation
+│   └── MixEval.md              # Mixed Evaluation
+├── 11-embedding-retrieval/
+│   ├── MTEB.md                 # Massive Text Embedding Benchmark
+│   └── BEIR.md                 # Information Retrieval Evaluation
+├── 12-agent-capabilities/
+│   ├── GAIA.md                  # General AI Assistant Evaluation
+│   ├── RE-Bench.md              # Agent Reasoning Evaluation
+│   ├── BFCL.md                  # Berkeley Function Calling Leaderboard
+│   ├── Tau2.md                  # Multi-Turn Agent Evaluation
+│   ├── BrowseComp.md            # Browser Agent Evaluation
+│   ├── OSWorld.md               # OS Agent Evaluation
+│   ├── WebArena.md              # Web Agent Evaluation
+│   └── GDPval.md                # GDP Validation Evaluation
+├── 13-domain-specific/
+│   ├── HealthBench.md           # Healthcare Evaluation
+│   ├── DeepSearchQA.md          # Deep Search QA
+│   └── Chess-Text.md           # Chess Reasoning
+├── 14-competition-math/
+│   ├── AIME.md                  # American Invitational Mathematics Exam
+│   ├── HMMT.md                  # Harvard-MIT Mathematics Tournament
+│   └── FrontierMath.md          # Frontier Math Evaluation
+└── 15-eval-frameworks/
+    ├── eval-frameworks-tools.md # Evaluation Frameworks & Tools Overview
+    └── emerging-benchmark-trends.md # Emerging Benchmark Trends
 ```
 
-## Benchmark 分类速查
+## Benchmark Classification Quick Reference
 
-| 类别 | 代表性 Benchmark | 核心评测维度 |
-|------|------------------|-------------|
-| 综合知识 | MMLU, MMLU-Pro, BIG-bench | 学科知识覆盖度 |
-| 推理 | GPQA, ARC-AGI, HLE | 深度推理与泛化 |
-| 数学 | GSM8K, MATH, AIME | 数学问题求解 |
-| 编程 | HumanEval, SWE-bench, LiveCodeBench | 代码生成与软件工程 |
-| 长上下文 | MRCR, AA-LCR, RULER | 长文本理解与推理 |
-| 指令跟随 | IFEval, MT-Bench | 格式/约束遵从性 |
-| 事实性 | TruthfulQA, FACTS, SimpleQA | 事实准确度与幻觉 |
-| 安全对齐 | Anthropic HH, WMDP | 安全性与对齐度 |
-| 多模态 | MMMU, VQAv2 | 图文联合理解 |
-| 对话生成 | Chatbot Arena, WildBench | 人类偏好对齐 |
-| 智能体 | GAIA, BFCL, RE-Bench | 代理工具使用能力 |
+| Category | Representative Benchmarks | Core Evaluation Dimension |
+|----------|--------------------------|---------------------------|
+| General Knowledge | MMLU, MMLU-Pro, BIG-bench | Subject knowledge coverage |
+| Reasoning | GPQA, ARC-AGI, ARC-AGI-2, HLE | Deep reasoning & generalization |
+| Math | GSM8K, MATH, AIME | Mathematical problem solving |
+| Coding | HumanEval, SWE-bench, LiveCodeBench, CodeForces, SWE-bench Verified | Code generation & software engineering |
+| Long Context | MRCR, AA-LCR, RULER | Long-text understanding & reasoning |
+| Instruction Following | IFEval, MT-Bench | Format/constraint compliance |
+| Truthfulness | TruthfulQA, FACTS, SimpleQA | Factual accuracy & hallucination |
+| Safety & Alignment | Anthropic HH, WMDP | Safety & alignment |
+| Multimodal | MMMU, MMMU-Pro, VQAv2 | Joint image-text understanding |
+| Dialogue & Generation | Chatbot Arena, WildBench | Human preference alignment |
+| Agent | GAIA, BFCL, RE-Bench, BrowseComp, OSWorld, WebArena | Agent tool use capability |
+| Competition Math | AIME, HMMT, FrontierMath | Competition-level math solving |
 
-## 主要使用方对照
+## Company Usage Reference
 
-| 公司 | 核心技术报告使用的 Benchmark |
-|------|------------------------------|
-| OpenAI | MMLU, MMLU-Pro, GSM8K, MATH, HumanEval, SWE-bench, GPQA, ARC-AGI, SimpleQA, Chatbot Arena |
-| Anthropic | MMLU, GSM8K, MATH, HumanEval, SWE-bench, GPQA, IFEval, Chatbot Arena, HLE |
-| Google DeepMind | MMLU, GSM8K, MATH, HumanEval, SWE-bench, GPQA, FACTS, SimpleQA Verified, MRCR, Chess Text |
+| Company | Core Benchmarks Used in Technical Reports |
+|---------|------------------------------------------|
+| OpenAI | MMLU, MMLU-Pro, GSM8K, MATH, HumanEval, SWE-bench, GPQA, ARC-AGI, SimpleQA, Chatbot Arena, BrowseComp, OSWorld, MMMU-Pro |
+| Anthropic | MMLU, GSM8K, MATH, HumanEval, SWE-bench, GPQA, IFEval, Chatbot Arena, HLE, BrowseComp, OSWorld, MMMU-Pro |
+| Google DeepMind | MMLU, GSM8K, MATH, HumanEval, SWE-bench, GPQA, FACTS, SimpleQA Verified, MRCR, Chess Text, MMMU-Pro |
 | Meta (Llama) | MMLU, GSM8K, MATH, HumanEval, HellaSwag, ARC, TruthfulQA, WinoGrande |
 | Mistral | MMLU, GSM8K, HumanEval, MBPP, HellaSwag, ARC |
 | DeepSeek | MMLU, GSM8K, MATH, HumanEval, AIME, CodeForces |
 
-## 数据来源
+## Data Sources
 
 - HuggingFace Datasets: https://huggingface.co/datasets
 - EleutherAI lm-eval-harness: https://github.com/EleutherAI/lm-evaluation-harness
@@ -119,8 +135,8 @@ ai-benchmark-kb/
 - Scale AI Leaderboards: https://scale.com/leaderboard
 - Artificial Analysis: https://artificialanalysis.ai/
 
-## 版本信息
+## Version Information
 
-- 创建日期: 2026-04-12
-- 最后更新: 2026-04-12
-- 数据截止: 2026年4月
+- Created: 2026-04-12
+- Last Updated: 2026-04-16
+- Data Cutoff: April 2026
